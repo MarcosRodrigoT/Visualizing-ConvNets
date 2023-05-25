@@ -15,9 +15,9 @@ This repository has been created following this
 [<img alt="View in Colab" width="40px" src="img/github_icon.ico" />](https://github.com/keras-team/keras-io/blob/master/examples/vision/visualizing_what_convnets_learn.py)
 
 ## Introduction
-In this example, we look into what sort of visual patterns image classification models learn. We'll be using the ResNet50V2 model, trained on the ImageNet dataset.
+In this example, we look into what sort of visual patterns image classification models learn. We'll be using the <span style="color: red">ResNet50V2</span> model, trained on the ImageNet dataset.
 
-Our process is simple: we will create input images that maximize the activation of specific filters in a target layer (picked somewhere in the middle of the model: layer conv3_block4_out). Such images represent a visualization of the pattern that the filter responds to.
+Our process is simple: we will create input images that maximize the activation of specific filters in a target layer (picked somewhere in the middle of the model: layer <span style="color: red">conv3_block4_out</span>). Such images represent a visualization of the pattern that the filter responds to.
 
 ## Setup
 ```python
