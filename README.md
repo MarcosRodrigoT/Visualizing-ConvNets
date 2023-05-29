@@ -26,11 +26,11 @@ import tensorflow as tf
 from tensorflow import keras
 
 # The dimensions of our input image
-img_width = 180
-img_height = 180
+IMG_WIDTH = 180
+IMG_HEIGHT = 180
 # Our target layer: we will visualize the filters from this layer.
 # See `model.summary()` for list of layer names, if you want to change this.
-layer_name = "conv3_block4_out"
+LAYER_NAME = "conv3_block4_out"
 ```
 
 ## Build a feature extraction model
@@ -39,7 +39,7 @@ layer_name = "conv3_block4_out"
 model = keras.applications.ResNet50V2(weights="imagenet", include_top=False)
 
 # Set up a model that returns the activation values for our target layer
-layer = model.get_layer(name=layer_name)
+layer = model.get_layer(name=LAYER_NAME)
 feature_extractor = keras.Model(inputs=model.inputs, outputs=layer.output)
 ```
 
@@ -85,7 +85,7 @@ Our process is as follows:
 ```python
 def initialize_image():
     # We start from a gray image with some random noise
-    img = tf.random.uniform((1, img_width, img_height, 3))
+    img = tf.random.uniform((1, IMG_WIDTH, IMG_HEIGHT, 3))
     # ResNet50V2 expects inputs in the range [-1, +1].
     # Here we scale our random inputs to [-0.125, +0.125]
     return (img - 0.5) * 0.25
@@ -156,8 +156,8 @@ for filter_index in range(64):
 # our 8 x 8 filters of size 128 x 128, with a 5px margin in between
 margin = 5
 n = 8
-cropped_width = img_width - 25 * 2
-cropped_height = img_height - 25 * 2
+cropped_width = IMG_WIDTH - 25 * 2
+cropped_height = IMG_HEIGHT - 25 * 2
 width = n * cropped_width + (n - 1) * margin
 height = n * cropped_height + (n - 1) * margin
 stitched_filters = np.zeros((width, height, 3))
