@@ -9,10 +9,10 @@ This repository has been created following this
 - **Last modified:** 2020/05/29
 - **Description:** Displaying the visual patterns that convnet filters respond to.
 
-<!-- [![View in Colab](img/colab_icon.ico)](img/colab_icon.ico) -->
+<!-- [![View in Colab](readme_images/colab_icon.ico)](readme_images/colab_icon.ico) -->
 
-[<img alt="View in Colab" width="40px" src="img/colab_icon.ico" />](https://colab.research.google.com/github/keras-team/keras-io/blob/master/examples/vision/ipynb/visualizing_what_convnets_learn.ipynb)
-[<img alt="View in Colab" width="40px" src="img/github_icon.ico" />](https://github.com/keras-team/keras-io/blob/master/examples/vision/visualizing_what_convnets_learn.py)
+[<img alt="View in Colab" width="40px" src="readme_images/colab_icon.ico" />](https://colab.research.google.com/github/keras-team/keras-io/blob/master/examples/vision/ipynb/visualizing_what_convnets_learn.ipynb)
+[<img alt="View in Colab" width="40px" src="readme_images/github_icon.ico" />](https://github.com/keras-team/keras-io/blob/master/examples/vision/visualizing_what_convnets_learn.py)
 
 ## Introduction
 In this example, we look into what sort of visual patterns image classification models learn. We'll be using the ***ResNet50V2*** model, trained on the ImageNet dataset.
@@ -138,7 +138,7 @@ This is what an input that maximizes the response of filter 0 in the target laye
 display(Image("0.png"))
 ```
 
-![Example of 1 filer](img/visualizing_what_convnets_learn_0.png)
+![Example of 1 filer](readme_images/visualizing_what_convnets_learn_0.png)
 
 ## Visualize the first 64 filters in the target layer
 Now, let's make a 8x8 grid of the first 64 filters in the target layer to get of feel for the range of different visual patterns that the model has learned.
@@ -246,7 +246,7 @@ Processing filter 62
 Processing filter 63
 ````
 
-![Example of 64 filers](img/visualizing_what_convnets_learn_1.png)
+![Example of 64 filers](readme_images/visualizing_what_convnets_learn_1.png)
 
 Image classification models see the world by decomposing their inputs over a "vector basis" of texture filters such as these.
 
@@ -254,4 +254,4 @@ See also this [old blog post](https://blog.keras.io/how-convolutional-neural-net
 
 Example available on HuggingFace.
 
-[![Hugging Face](img/Hugging%20Face%20-%20What%20Convnets%20Learn.svg)](img/Hugging%20Face%20-%20What%20Convnets%20Learn.svg)
+[![Hugging Face](readme_images/Hugging%20Face%20-%20What%20Convnets%20Learn.svg)](readme_images/Hugging%20Face%20-%20What%20Convnets%20Learn.svg)
