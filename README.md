@@ -15,9 +15,12 @@ This repository has been created following this
 [<img alt="View in Colab" width="40px" src="readme_images/github_icon.ico" />](https://github.com/keras-team/keras-io/blob/master/examples/vision/visualizing_what_convnets_learn.py)
 
 ## Introduction
-In this example, we look into what sort of visual patterns image classification models learn. We'll be using the ***ResNet50V2*** model, trained on the ImageNet dataset.
+In this example, we look into what sort of visual patterns image classification models learn. We'll be using the 
+***ResNet50V2*** model, trained on the ImageNet dataset.
 
-Our process is simple: we will create input images that maximize the activation of specific filters in a target layer (picked somewhere in the middle of the model: layer ***conv3_block4_out***). Such images represent a visualization of the pattern that the filter responds to.
+Our process is simple: we will create input images that maximize the activation of specific filters in a target layer 
+(picked somewhere in the middle of the model: layer ***conv3_block4_out***). Such images represent a visualization of 
+the pattern that the filter responds to.
 
 ## Setup
 ```python
@@ -49,7 +52,8 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 ```
 
 ## Set up the gradient ascent process
-The "loss" we will maximize is simply the mean of the activation of a specific filter in our target layer. To avoid border effects, we exclude border pixels.
+The "loss" we will maximize is simply the mean of the activation of a specific filter in our target layer. To avoid 
+border effects, we exclude border pixels.
 
 ```python
 def compute_loss(input_image, filter_index):
@@ -59,7 +63,8 @@ def compute_loss(input_image, filter_index):
     return tf.reduce_mean(filter_activation)
 ```
 
-Our gradient ascent function simply computes the gradients of the loss above with regard to the input image, and update the update image so as to move it towards a state that will activate the target filter more strongly.
+Our gradient ascent function simply computes the gradients of the loss above with regard to the input image, and update 
+the image so as to move it towards a state that will activate the target filter more strongly.
 
 ```python
 @tf.function
@@ -80,7 +85,8 @@ Our process is as follows:
 
 - Start from a random image that is close to "all gray" (i.e. visually netural)
 - Repeatedly apply the gradient ascent step function defined above
-- Convert the resulting input image back to a displayable form, by normalizing it, center-cropping it, and restricting it to the [0, 255] range.
+- Convert the resulting input image back to a displayable form, by normalizing it, center-cropping it, and restricting 
+it to the [0, 255] range.
 
 ```python
 def initialize_image():
@@ -141,7 +147,8 @@ display(Image("0.png"))
 ![Example of 1 filer](readme_images/visualizing_what_convnets_learn_0.png)
 
 ## Visualize the first 64 filters in the target layer
-Now, let's make a 8x8 grid of the first 64 filters in the target layer to get of feel for the range of different visual patterns that the model has learned.
+Now, let's make a 8x8 grid of the first 64 filters in the target layer to get of feel for the range of different visual 
+patterns that the model has learned.
 
 ```python
 # Compute image inputs that maximize per-filter activations
@@ -248,9 +255,11 @@ Processing filter 63
 
 ![Example of 64 filers](readme_images/visualizing_what_convnets_learn_1.png)
 
-Image classification models see the world by decomposing their inputs over a "vector basis" of texture filters such as these.
+Image classification models see the world by decomposing their inputs over a "vector basis" of texture filters such as 
+these.
 
-See also this [old blog post](https://blog.keras.io/how-convolutional-neural-networks-see-the-world.html) for analysis and interpretation.
+See also this [old blog post](https://blog.keras.io/how-convolutional-neural-networks-see-the-world.html) for analysis 
+and interpretation.
 
 Example available on HuggingFace.
 
