@@ -128,7 +128,8 @@ def deprocess_image(img_):
 
 
 def visualize_results(filters=range(0, 1)):
-    # Build a black picture with enough space for our n x n filters of size 128 x 128, with a 5px margin in between
+    # Build a black picture with enough space for our n x n filters of size IMG_WIDTH x IMG_HEIGHT, with a 5px margin
+    # in between
     margin = 5
     n = np.sqrt(len(filters))
     assert n.is_integer(), f'The square root of the number of filters must be a whole number, ' \
